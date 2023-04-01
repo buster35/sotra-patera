@@ -39,7 +39,7 @@ var specialChars = [
 ];
 var randomNum = Math.floor(Math.random() * specialChars.length);
 var randomChar = specialChars.at(randomNum); //need a method to print element instead of index number//
-console.log(randomChar);
+console.log(randomChar); //create a for loop to log (x) # of special characters?//
 var lowerCase = [
   "a",
   "b",
