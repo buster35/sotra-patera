@@ -3,6 +3,18 @@ var generateBtn = document.querySelector("#generate"); //selecting the html butt
 generateBtn.addEventListener("click", writePassword); //Yes ok so listening for the "click" event on the button stored in the generateBtn variable; once this occurs, the writePassword function will run//
 
 //START: start by creating a prompt box on "click" event :)
+alert(
+  "Welcome to the random password generator. The following prompts will ask for your input in order to create a randomly-generated password based on your preferences."
+);
+var promptOne = confirm("Would you like to use lower-case letters?");
+var promptTwo = confirm("Would you like to use upper-case letters?");
+var promptThree = confirm(
+  "Would you like to use special characters (recommended)?"
+);
+var promptFour = confirm("Would you like to use numbers?");
+var promptFive = prompt(
+  "Lastly, how long would you like your password to be? Please enter a number value between 8 and 128."
+);
 
 var specialChars = [
   "!",
