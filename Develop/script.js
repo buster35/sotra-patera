@@ -6,15 +6,51 @@ generateBtn.addEventListener("click", writePassword); //Yes ok so listening for 
 alert(
   "Welcome to the random password generator. The following prompts will ask for your input in order to create a randomly-generated password based on your preferences."
 );
+var userInputs = {
+  promptOne: 0,
+  promptTwo: 0,
+  promptThree: 0,
+  promptFour: 0,
+  promptFive: 0, //store # value between 8 and 128//
+}
 var promptOne = confirm("Would you like to use lower-case letters?");
+if (promtOne != null) {
+  //something with var lowerCase//
+}
+else... {
+
+};
+
 var promptTwo = confirm("Would you like to use upper-case letters?");
+if (promptTwo != null) {
+  //something with var upperCase//
+}
+else... {
+
+};
+
 var promptThree = confirm(
   "Would you like to use special characters (recommended)?"
 );
+if (promptThree != null) {
+  //something with var specialChars//
+}
+else... {
+
+};
+
 var promptFour = confirm("Would you like to use numbers?");
+if (promptFour != null) {
+  //something with var numbers//
+}
+else... {
+
+};
+
 var promptFive = prompt(
   "Lastly, how long would you like your password to be? Please enter a number value between 8 and 128."
 );
+
 
 var specialChars = [
   "!",
@@ -85,7 +121,6 @@ var upperCase = lowerCase.map(function (x) {
 });
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-function userInputs() {}
 
 function generatePassword() {
   var randomNum = Math.floor(Math.random() * Array.length); //generic method applied to any array to output random index #?//
