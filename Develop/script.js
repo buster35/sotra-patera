@@ -6,15 +6,17 @@ generateBtn.addEventListener("click", writePassword); //Yes ok so listening for 
 alert(
   "Welcome to the random password generator. The following prompts will ask for your input in order to create a randomly-generated password based on your preferences."
 );
+
 var userInputs = {
   promptOne: 0,
   promptTwo: 0,
   promptThree: 0,
   promptFour: 0,
 };
-console.log(userInputs);
-var promptOne = confirm("Would you like to use lower-case letters?");
 
+console.log(userInputs);
+
+var promptOne = confirm("Would you like to use lower-case letters?");
 function logOne() {
   if (promptOne != null) {
     userInputs.promptOne++;
@@ -67,9 +69,8 @@ function logFive() {
   if (promptFive >= 8 && promptFive <= 128) {
     userInputs["pFive"] = Number(promptFive);
   } else alert("Please enter a number value between 8 and 128");
-} //store # value between 8 and 128//
+}
 logFive();
-function promptTally() {}
 
 var specialChars = [
   "!",
