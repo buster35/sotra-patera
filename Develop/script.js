@@ -11,19 +11,19 @@ var userInputs = {
   promptTwo: 0,
   promptThree: 0,
   promptFour: 0,
-  promptFive: 0, //store # value between 8 and 128//
 };
 console.log(userInputs);
 var promptOne = confirm("Would you like to use lower-case letters?");
 
 function logOne() {
-  if (promtOne != null) {
+  if (promptOne != null) {
     userInputs.promptOne++;
     confirm("Ok, we'll include lower-case letters in your password.");
   } else {
     confirm("Ok, we won't include lower-case letters in your password");
   }
 }
+logOne();
 
 var promptTwo = confirm("Would you like to use upper-case letters?");
 function logTwo() {
@@ -34,6 +34,7 @@ function logTwo() {
     confirm("Ok, we won't include lower-case letters in your password");
   }
 }
+logTwo();
 
 var promptThree = confirm(
   "Would you like to use special characters (recommended)?"
@@ -46,6 +47,7 @@ function logThree() {
     confirm("Ok, we won't include special characters in your password");
   }
 }
+logThree();
 
 var promptFour = confirm("Would you like to use numbers?");
 function logFour() {
@@ -56,10 +58,18 @@ function logFour() {
     confirm("Ok, we won't include numbers in your password");
   }
 }
+logFour();
 
 var promptFive = prompt(
   "Lastly, how long would you like your password to be? Please enter a number value between 8 and 128."
 );
+function logFive() {
+  if (promptFive >= 8 && promptFive <= 128) {
+    userInputs["pFive"] = Number(promptFive);
+  } else alert("Please enter a number value between 8 and 128");
+} //store # value between 8 and 128//
+logFive();
+function promptTally() {}
 
 var specialChars = [
   "!",
