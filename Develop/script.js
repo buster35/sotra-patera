@@ -1,11 +1,7 @@
-// AS AN employee with access to sensitive data
-// I WANT to randomly generate a password that meets certain criteria
-// SO THAT I can create a strong password that provides greater security
-// ```
 // Assignment Code
 var generateBtn = document.querySelector("#generate"); //selecting the html button in JS, then storing this element in generateBtn variable//
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); //Yes ok so listening for the "click" event on the button stored in the generateBtn variable; once this occurs, the writePassword function will run//
+
 //Create arrays for these:
 var specialChars = [
   "!",
@@ -40,7 +36,10 @@ var specialChars = [
   "|",
   "}",
   "~",
-]; //all OWASP chars except for " .
+];
+var randomNum = Math.floor(Math.random() * specialChars.length);
+var randomChar = specialChars.at(randomNum); //need a method to print element instead of index number//
+console.log(randomChar);
 var lowerCase = [
   "a",
   "b",
@@ -69,18 +68,17 @@ var lowerCase = [
   "y",
   "z",
 ];
-var upperCase = [lowerCase.toUpperCase];
+// // var upperCase =
+// console.log(upperCase);
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 //START: start by creating a prompt box on "click" event :)
 //object.method not currently attached to anything; we want it to do something. Put it in a function:
 
-function userInputs() {
-  window.prompt("Welcome to the random password generator engine"); //prompts go in here
-}
+function userInputs() {}
 userInputs();
 
 function generatePassword() {
-  fhdjaskllfkdha;
+  let;
 }
 
 // GIVEN I need a new, secure password
@@ -95,12 +93,6 @@ function generatePassword() {
 
 // WHEN asked for character types to include in the password
 // THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters// make 4 variables (one for each character type)//
-
-console.log(lowerCase);
-
-console.log(upperCase);
-var randomChar = Math.floor(Math.random() * specialChars.length);
-console.log(randomChar);
 
 // WHEN I answer each prompt
 // THEN my input should be validated and at least one character type should be selected
