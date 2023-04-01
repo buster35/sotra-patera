@@ -11,6 +11,7 @@ var specialChars = [
   "%",
   "&",
   "'",
+  '"',
   "(",
   ")",
   "*",
@@ -37,9 +38,8 @@ var specialChars = [
   "}",
   "~",
 ];
-var randomNum = Math.floor(Math.random() * specialChars.length);
-var randomChar = specialChars.at(randomNum); //need a method to print element instead of index number//
-console.log(randomChar); //create a for loop to log (x) # of special characters?//
+
+// console.log(randomChar); //create a for loop to log (x) # of special characters?//
 var lowerCase = [
   "a",
   "b",
@@ -68,22 +68,24 @@ var lowerCase = [
   "y",
   "z",
 ];
-// // var upperCase =
-// console.log(upperCase);
+var upperCase = lowerCase.map(function (x) {
+  return x.toUpperCase(); //ok so here I'm using the .map method on the lowerCase array, in this case to call a callback function on every element (x) in the array and specifically mutating them with the .toUpperCase method//
+});
+console.log(upperCase);
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 //START: start by creating a prompt box on "click" event :)
-//object.method not currently attached to anything; we want it to do something. Put it in a function:
 
 function userInputs() {}
-userInputs();
 
 function generatePassword() {
-  let;
+  var randomNum = Math.floor(Math.random() * Array.length); //generic method applied to any array to output random index #?//
+  var randomChar = Array.at(randomNum);
 }
 
 // GIVEN I need a new, secure password
 // WHEN I click the button to generate a password
 // THEN I am presented with a series of prompts for password criteria
+//**When click event occurs we want to do something. To do something we use a function
 
 // WHEN prompted for password criteria
 // THEN I select which criteria to include in the password
