@@ -49,7 +49,7 @@ logThree();
 
 var promptFour = confirm("Would you like to use numbers?");
 function logFour() {
-  if (userArray == true) {
+  if (promptFour == true) {
     userArray.push(1);
     confirm("Ok, we'll include numbers in your password.");
   } else {
@@ -80,9 +80,48 @@ function getRandomInt() {
 }
 console.log(getRandomInt());
 
-// function userTally () {
-//   if (userTotal[0] === 1) {
-//     return getRandomInt();
+let lowerCase = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+
+function userTally () {
+  if (userTotal[0] === 1) {
+    let run = getRandomInt();
+    for (let i = 0; i < run; i++) {
+      function getRandom(min, max) {
+        let step1 = max - min + 1;
+        let step2 = Math.random() * step1;
+        let result = Math.floor(step2) + min;
+        return result;//trying to find a way to use for loop to select a random index from lowerCase "run" # of times//
+    }
+  getRandom(0, lowerCase.length - 1)}}}
+    ;
+console.log(userTally());
 //   }
 //   if (userTotal[1] === 1) {
 //     return getRandomInt();
@@ -131,34 +170,7 @@ var specialChars = [
   "~",
 ];
 // console.log(randomChar); //create a for loop to log (x) # of special characters?//
-var lowerCase = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-];
+
 var upperCase = lowerCase.map(function (x) {
   return x.toUpperCase(); //ok so here I'm using the .map method on the lowerCase array, in this case to call a callback function on every element (x) in the array and specifically mutating them with the .toUpperCase method//
 });
