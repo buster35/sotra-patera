@@ -7,16 +7,16 @@ alert(
   "Welcome to the random password generator. The following prompts will ask for your input in order to create a randomly-generated password based on your preferences."
 );
 
-let userInputs = []
-console.log(userInputs);
+let userArray = []
+console.log(userArray);
 
 var promptOne = confirm("Would you like to use lower-case letters?");
 function logOne() {
   if (promptOne == true) {
-    userInputs.unshift(1);
+    userArray.unshift(1);
     confirm("Ok, we'll include lower-case letters in your password.");
   } else {
-    userInputs.unshift(0);
+    userArray.unshift(0);
     confirm("Ok, we won't include lower-case letters in your password");
   }
 }
@@ -25,10 +25,10 @@ logOne();
 var promptTwo = confirm("Would you like to use upper-case letters?");
 function logTwo() {
   if (promptTwo == true) {
-    userInputs.push(1);
+    userArray.push(1);
     confirm("Ok, we'll include upper-case letters in your password.");
   } else {
-    userInputs.push(0);
+    userArray.push(0);
     confirm("Ok, we won't include lower-case letters in your password");
   }
 }
@@ -39,10 +39,10 @@ var promptThree = confirm(
 );
 function logThree() {
   if (promptThree == true) {
-    userInputs.push(1);
+    userArray.push(1);
     confirm("Ok, we'll include special characters in your password.");
   } else {
-    userInputs.push(0);
+    userArray.push(0);
     confirm("Ok, we won't include special characters in your password");
   }
 }
@@ -50,11 +50,11 @@ logThree();
 
 var promptFour = confirm("Would you like to use numbers?");
 function logFour() {
-  if (promptFour == true) {
-    userInputs.push(1);
+  if (userArray == true) {
+    userArray.push(1);
     confirm("Ok, we'll include numbers in your password.");
   } else {
-    userInputs.push(0);
+    userArray.push(0);
     confirm("Ok, we won't include numbers in your password");
   }
 }
@@ -65,22 +65,24 @@ var promptFive = prompt(
 );
 function logFive() {
   if (promptFive >= 8 && promptFive <= 128) {
-    userInputs.push(Number(promptFive));
+    userArray.push(Number(promptFive));
   } else alert("Please enter a number value between 8 and 128");
 }
 logFive();
 
+console.log(userArray);
+let userInputs = [];
 console.log(userInputs);
-
+let userTotal = userArray.concat(userInputs);
+console.log(userTotal);
 
 
 function userTally () {
-  let tallyTotal = 3
-  if (userInputs[0] === 1) {
-    return (userInputs[4] / tallyTotal)
+  if (userTotal[0] === 1) {
+    return "yes"
   }};
 
-console.log(userTally);
+console.log(userTally());
   
 //   if (userInputs.promptTwo === 1) {
 //     return (userInputs.pFive / tallyTotal)
