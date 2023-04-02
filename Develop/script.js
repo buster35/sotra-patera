@@ -7,21 +7,16 @@ alert(
   "Welcome to the random password generator. The following prompts will ask for your input in order to create a randomly-generated password based on your preferences."
 );
 
-var userInputs = {
-  promptOne: 0,
-  promptTwo: 0,
-  promptThree: 0,
-  promptFour: 0,
-};
-
+let userInputs = []
 console.log(userInputs);
 
 var promptOne = confirm("Would you like to use lower-case letters?");
 function logOne() {
-  if (promptOne != null) {
-    userInputs.promptOne++;
+  if (promptOne == true) {
+    userInputs.unshift(1);
     confirm("Ok, we'll include lower-case letters in your password.");
   } else {
+    userInputs.unshift(0);
     confirm("Ok, we won't include lower-case letters in your password");
   }
 }
@@ -29,10 +24,11 @@ logOne();
 
 var promptTwo = confirm("Would you like to use upper-case letters?");
 function logTwo() {
-  if (promptTwo != null) {
-    userInputs.promptTwo++;
+  if (promptTwo == true) {
+    userInputs.push(1);
     confirm("Ok, we'll include upper-case letters in your password.");
   } else {
+    userInputs.push(0);
     confirm("Ok, we won't include lower-case letters in your password");
   }
 }
@@ -42,10 +38,11 @@ var promptThree = confirm(
   "Would you like to use special characters (recommended)?"
 );
 function logThree() {
-  if (promptThree != null) {
-    userInputs.promptThree++;
+  if (promptThree == true) {
+    userInputs.push(1);
     confirm("Ok, we'll include special characters in your password.");
   } else {
+    userInputs.push(0);
     confirm("Ok, we won't include special characters in your password");
   }
 }
@@ -53,10 +50,11 @@ logThree();
 
 var promptFour = confirm("Would you like to use numbers?");
 function logFour() {
-  if (promptFour != null) {
-    userInputs.promptFour++;
+  if (promptFour == true) {
+    userInputs.push(1);
     confirm("Ok, we'll include numbers in your password.");
   } else {
+    userInputs.push(0);
     confirm("Ok, we won't include numbers in your password");
   }
 }
@@ -67,10 +65,35 @@ var promptFive = prompt(
 );
 function logFive() {
   if (promptFive >= 8 && promptFive <= 128) {
-    userInputs["pFive"] = Number(promptFive);
+    userInputs.push(Number(promptFive));
   } else alert("Please enter a number value between 8 and 128");
 }
 logFive();
+
+console.log(userInputs);
+
+
+
+function userTally () {
+  let tallyTotal = 3
+  if (userInputs[0] === 1) {
+    return (userInputs[4] / tallyTotal)
+  }};
+
+console.log(userTally);
+  
+//   if (userInputs.promptTwo === 1) {
+//     return (userInputs.pFive / tallyTotal)
+//   }
+
+//   if (userInputs.promptThree === 1) {
+//     return (userInputs.pFive / tallyTotal)
+//   }
+
+//   if (userInputs.promptFour === 1) {
+//     return (userInputs.pFive / tallyTotal)
+//   }
+// }
 
 var specialChars = [
   "!",
