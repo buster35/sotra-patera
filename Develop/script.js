@@ -1,3 +1,5 @@
+let finalPassword = "";
+var promptFive = 0;
 // Assignment Code
 var generateBtn = document.querySelector("#generate"); //selecting the html button in JS, then storing this element in generateBtn variable//
 generateBtn.addEventListener("click", writePassword); //Yes ok so listening for the "click" event on the button stored in the generateBtn variable; once this occurs, the writePassword function will run//
@@ -7,78 +9,68 @@ alert(
   "Welcome to the random password generator. The following prompts will ask for your input in order to create a randomly-generated password based on your preferences."
 );
 
-let userArray = []
+let userArray = [];
+function randomIndex(array) {
+  var index = Math.floor(Math.random() * array.length);
+  return index;
+}
 
-var promptOne = confirm("Would you like to use lower-case letters?");
-function logOne() {
-  if (promptOne == true) {
-    userArray.unshift(1);
-    confirm("Ok, we'll include lower-case letters in your password.");
-  } else {
-    userArray.unshift(0);
-    confirm("Ok, we won't include lower-case letters in your password");
+function logOne(promptOne) {
+  if (promptOne === true && finalPassword.length < promptFive) {
+    var index = randomIndex(lowerCase);
+    finalPassword = finalPassword + lowerCase[index];
   }
 }
-logOne();
 
-var promptTwo = confirm("Would you like to use upper-case letters?");
-function logTwo() {
-  if (promptTwo == true) {
-    userArray.push(1);
-    confirm("Ok, we'll include upper-case letters in your password.");
-  } else {
-    userArray.push(0);
-    confirm("Ok, we won't include lower-case letters in your password");
+function logTwo(promptTwo) {
+  if (promptTwo === true && finalPassword.length < promptFive) {
+    var index = randomIndex(upperCase);
+    finalPassword = finalPassword + upperCase[index];
   }
 }
-logTwo();
 
-var promptThree = confirm(
-  "Would you like to use special characters (recommended)?"
-);
-function logThree() {
-  if (promptThree == true) {
-    userArray.push(1);
-    confirm("Ok, we'll include special characters in your password.");
-  } else {
-    userArray.push(0);
-    confirm("Ok, we won't include special characters in your password");
+function logThree(promptThree) {
+  if (promptThree === true && finalPassword.length < promptFive) {
+    var index = randomIndex(specialChars);
+    finalPassword = finalPassword + specialChars[index];
   }
 }
-logThree();
 
-var promptFour = confirm("Would you like to use numbers?");
-function logFour() {
-  if (promptFour == true) {
-    userArray.push(1);
-    confirm("Ok, we'll include numbers in your password.");
-  } else {
-    userArray.push(0);
-    confirm("Ok, we won't include numbers in your password");
+function logFour(promptFour) {
+  if (promptFour === true && finalPassword.length < promptFive) {
+    var index = randomIndex(numbers);
+    finalPassword = finalPassword + numbers[index];
   }
 }
-logFour();
 
-var promptFive = prompt(
-  "Lastly, how long would you like your password to be? Please enter a number value between 8 and 128."
-);
 function logFive() {
+  promptFive = prompt(
+    "Lastly, how long would you like your password to be? Please enter a number value between 8 and 128."
+  );
   if (promptFive >= 8 && promptFive <= 128) {
-    userArray.push(Number(promptFive));
+    var promptOne = confirm("Would you like to use lower-case letters?");
+    var promptTwo = confirm("Would you like to use upper-case letters?");
+    var promptThree = confirm(
+      "Would you like to use special characters (recommended)?"
+    );
+    var promptFour = confirm("Would you like to use numbers?");
+    for (i = 0; i < promptFive; i++) {
+      logOne(promptOne);
+      logTwo(promptTwo);
+      logThree(promptThree);
+      logFour(promptFour);
+    }
   } else alert("Please enter a number value between 8 and 128");
 }
-logFive();
 
-let userInputs = [];
-let userTotal = userArray.concat(userInputs);
-console.log(userTotal);
 
-function getRandomInt() {
-  min = Math.ceil(0);
-  max = Math.floor(userTotal[4]);
-  return Math.floor(Math.random() * (max - min) + min);
-}
-console.log(getRandomInt());
+
+// function getRandomInt() {
+//   min = Math.ceil(0);
+//   max = Math.floor(userTotal[4]);
+//   return Math.floor(Math.random() * (max - min) + min);
+// }
+// console.log(getRandomInt());
 
 let lowerCase = [
   "a",
@@ -109,19 +101,6 @@ let lowerCase = [
   "z",
 ];
 
-function userTally () {
-  if (userTotal[0] === 1) {
-    let run = getRandomInt();
-    for (let i = 0; i < run; i++) {
-      function getRandom(min, max) {
-        let step1 = max - min + 1;
-        let step2 = Math.random() * step1;
-        let result = Math.floor(step2) + min;
-        return result;//trying to find a way to use for loop to select a random index from lowerCase "run" # of times//
-    }
-  getRandom(0, lowerCase.length - 1)}}}
-    ;
-console.log(userTally());
 //   }
 //   if (userTotal[1] === 1) {
 //     return getRandomInt();
@@ -177,8 +156,8 @@ var upperCase = lowerCase.map(function (x) {
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 function generatePassword() {
-  var randomNum = Math.floor(Math.random() * Array.length); //generic method applied to any array to output random index #?//
-  var randomChar = Array.at(randomNum);
+  logFive();
+  return finalPassword;
 }
 
 //**When click event occurs we want to do something. To do something we use a function
