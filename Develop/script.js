@@ -8,7 +8,6 @@ alert(
 );
 
 let userArray = []
-console.log(userArray);
 
 var promptOne = confirm("Would you like to use lower-case letters?");
 function logOne() {
@@ -70,33 +69,32 @@ function logFive() {
 }
 logFive();
 
-console.log(userArray);
 let userInputs = [];
-console.log(userInputs);
 let userTotal = userArray.concat(userInputs);
 console.log(userTotal);
 
+function getRandomInt() {
+  min = Math.ceil(0);
+  max = Math.floor(userTotal[4]);
+  return Math.floor(Math.random() * (max - min) + min);
+}
+console.log(getRandomInt());
 
-function userTally () {
-  if (userTotal[0] === 1) {
-    return "yes"
-  }};
-
-console.log(userTally());
-  
-//   if (userInputs.promptTwo === 1) {
-//     return (userInputs.pFive / tallyTotal)
+// function userTally () {
+//   if (userTotal[0] === 1) {
+//     return getRandomInt();
 //   }
-
-//   if (userInputs.promptThree === 1) {
-//     return (userInputs.pFive / tallyTotal)
+//   if (userTotal[1] === 1) {
+//     return getRandomInt();
 //   }
-
-//   if (userInputs.promptFour === 1) {
-//     return (userInputs.pFive / tallyTotal)
+//   if (userTotal[2] === 1) {
+//     return getRandomInt();
 //   }
-// }
-
+//   if (userInputs[3] === 1) {
+//     return getRandomInt();
+//   }
+// };
+// console.log(userTally())
 var specialChars = [
   "!",
   "#",
