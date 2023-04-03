@@ -10,7 +10,7 @@ In reality this program is very intuitive. Here's a simple usage reccommendation
 
 GitHub: https://github.com/buster35/sotra-patera
 <br>
-GitHub Pages:
+GitHub Pages: https://buster35.github.io/sotra-patera/
 </br>
 
 <li>Follow the Github Pages link to pull up the generator.
