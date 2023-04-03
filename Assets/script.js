@@ -1,7 +1,7 @@
 let finalPassword = "";
 var promptFive = 0;
 var generateBtn = document.querySelector("#generate"); //selecting the html button in JS, then storing this element in generateBtn variable//
-generateBtn.addEventListener("click", writePassword); //Yes ok so listening for the "click" event on the button stored in the generateBtn variable; once this occurs, the writePassword function will run//
+generateBtn.addEventListener("click", writePassword); //listening for the "click" event on the button stored in the generateBtn variable; once this occurs, the writePassword function will run//
 
 //START:
 alert(
@@ -137,7 +137,7 @@ function generatePassword() {
   return finalPassword;
 }
 
-//**When click event occurs we want to do something. To do something we use a function
+//**When click event occurs we want to do something.
 // Write password to the #password input//this writes the randomly-generated pw to the textbox//
 function writePassword() {
   var password = generatePassword();

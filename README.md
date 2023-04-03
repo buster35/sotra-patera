@@ -8,6 +8,11 @@ Hello and welcome to my first "in-depth" coding project. Here I've made a functi
 
 In reality this program is very intuitive. Here's a simple usage reccommendation:
 
+GitHub: https://github.com/buster35/sotra-patera
+<br>
+GitHub Pages:
+</br>
+
 <li>Follow the Github Pages link to pull up the generator.
 <li>You will be welcomed with a popout alert; from here, you can click on the Generate Password.
 <li>There will be five prompts; first, enter a number length you'd like the password to be.
@@ -24,7 +29,11 @@ In reality this program is very intuitive. Here's a simple usage reccommendation
 
 ### Screenshots:
 
-![]()
+![](Assets\welcome-box.png)
+
+![](Assets\password-length-box.png)
+
+![](Assets\password-example.png)
 
 ## Credits
 
